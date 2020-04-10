@@ -228,6 +228,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/reduxstu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王柯基">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王柯基的BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/10/reduxstu/" itemprop="url">Redux基础知识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-10T17:17:24+08:00">
+                2020-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="专注于状态管理的库"><a href="#专注于状态管理的库" class="headerlink" title="专注于状态管理的库"></a>专注于状态管理的库</h2><ul>
+<li>Redux专注于状态管理，和react解耦</li>
+<li>单一状态，单向数据流</li>
+<li>核心概念：store，state，action，reducer</li>
+</ul>
+<h2 id="Redux的正确使用方法"><a href="#Redux的正确使用方法" class="headerlink" title="Redux的正确使用方法"></a>Redux的正确使用方法</h2><ul>
+<li>首先通过<em>reducer</em>新建<em>store</em>，随时通过<em>store.getState</em>获取状态</li>
+<li>需要状态变更，<em>store.dispatch(action)</em>来修改状态</li>
+<li>Reducer函数接受<em>state</em>和<em>action</em>，返回新的<em>state</em>，可以用<em>store.subscribe</em>监听每次修改</li>
+</ul>
+<h2 id="Redux如何和React一起用"><a href="#Redux如何和React一起用" class="headerlink" title="Redux如何和React一起用"></a>Redux如何和React一起用</h2><ul>
+<li>把<em>store.dispatch</em>方法传递给组件，内部可以调用修改状态</li>
+<li>Subscribe订阅render函数，每次修改都重新渲染</li>
+<li>Redux相关内容移到单独的<em>index.redux.js</em>单独管理</li>
+</ul>
+<h2 id="处理异步、调试工具、更优雅的和react结合"><a href="#处理异步、调试工具、更优雅的和react结合" class="headerlink" title="处理异步、调试工具、更优雅的和react结合"></a>处理异步、调试工具、更优雅的和react结合</h2><ul>
+<li>Redux处理异步，需要<em>redux-thunk</em>插件</li>
+<li>npm install redux-devtools-extension </li>
+<li>使用react-redux优雅的连接react和redux</li>
+</ul>
+<h1 id="处理异步"><a href="#处理异步" class="headerlink" title="处理异步"></a>处理异步</h1><h2 id="Redux默认只处理同步，异步任务需要react-thunk中间件"><a href="#Redux默认只处理同步，异步任务需要react-thunk中间件" class="headerlink" title="Redux默认只处理同步，异步任务需要react-thunk中间件"></a>Redux默认只处理同步，异步任务需要react-thunk中间件</h2><ul>
+<li>npm install redux-thunk –save</li>
+<li>使用<em>applyMiddleware</em>开启thunk中间件</li>
+<li>Action可以返回函数，使用dispatch提交action</li>
+</ul>
+<h1 id="调试工具"><a href="#调试工具" class="headerlink" title="调试工具"></a>调试工具</h1><h2 id="Chrome搜索redux安装"><a href="#Chrome搜索redux安装" class="headerlink" title="Chrome搜索redux安装"></a>Chrome搜索redux安装</h2><ul>
+<li>新建<em>store<em>的时候判断</em>window.devToolsExtension</em></li>
+<li>使用<em>compose<em>结合</em>thunk<em>和</em>window.devToolsExtension</em></li>
+<li>调试窗的redux选项卡，实时看到<em>state</em></li>
+</ul>
+<h2 id="使用react-redux"><a href="#使用react-redux" class="headerlink" title="使用react-redux"></a>使用react-redux</h2><ul>
+<li>npm install react-redux –save</li>
+<li>忘记subscribe，记住reducer，action和dispatch即可</li>
+<li>React-redux提供<em>Provider</em>和<em>connect</em>两个接口</li>
+</ul>
+<h2 id="React-redux具体使用"><a href="#React-redux具体使用" class="headerlink" title="React-redux具体使用"></a>React-redux具体使用</h2><ul>
+<li>Provider组件在应用最外层，传入store即可，只用一次 </li>
+<li>Connect负责从外部获取组件需要的参数</li>
+<li>Connect可以用装饰器的方式来写</li>
+</ul>
+<h2 id="使用装饰器优化connect代码"><a href="#使用装饰器优化connect代码" class="headerlink" title="使用装饰器优化connect代码"></a>使用装饰器优化connect代码</h2><ul>
+<li>npm run eject弹出个性化配置</li>
+<li>npm install babel-plugin-transform-decorators-legcy插件</li>
+<li>package.json里加上plugins配置</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/reactstu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -538,7 +702,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
