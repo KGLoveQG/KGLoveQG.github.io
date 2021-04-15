@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>你好</title>
+    <url>/2020/04/10/hello-world/</url>
+    <content><![CDATA[<blockquote>
+<p>欢迎来到英雄联，啊，不，我的blog，这里将是我的博客的起点，欢迎你常来～</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
     <title>Git Pages + Hexo搭建个人博客记录</title>
     <url>/2020/04/10/hexo-init/</url>
     <content><![CDATA[<p>开发环境：Mac<br>感谢 <strong><a href="https://blog.csdn.net/muzilanlan/article/details/81542917" target="_blank" rel="noopener">muzilan</a></strong> 兄台的分享</p>
@@ -106,14 +114,6 @@
         <tag>技术</tag>
         <tag>Hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>你好</title>
-    <url>/2020/04/10/hello-world/</url>
-    <content><![CDATA[<blockquote>
-<p>欢迎来到英雄联，啊，不，我的blog，这里将是我的博客的起点，欢迎你常来～</p>
-</blockquote>
-]]></content>
   </entry>
   <entry>
     <title>react学习日记</title>
